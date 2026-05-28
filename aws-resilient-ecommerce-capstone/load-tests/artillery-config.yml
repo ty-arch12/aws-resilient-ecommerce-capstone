@@ -1,0 +1,24 @@
+config:
+  target: "http://amazonaws.com" # Replace with your real AWS Application Load Balancer URL
+  phases:
+    - duration: 60
+      arrivalRate: 5
+      name: "Warm-up Phase"
+    - duration: 120
+      arrivalRate: 15
+      rampTo: 50
+      name: "Promotion Traffic Spike Simulation"
+  scenarios:
+    - name: "E-Commerce Customer Browse & Asynchronous Checkout"
+      flow:
+        - get:
+            url: "/api/v1/products/catalog"
+            headers:
+              Cache-Control: "no-cache"
+        - think: 2
+        - post:
+            url: "/api/v1/orders/checkout"
+            json:
+              userId: 9845
+              sku: "AWS-CAPSTONE-RESILIENT-SKU"
+              quantity: 1
