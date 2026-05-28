@@ -1,0 +1,16 @@
+===================================================================
+AWS CAPSTONE CONSOLE INFRASTRUCTURE MANIFEST
+===================================================================
+PRIMARY REGION: us-east-1 (N. Virginia)
+SECONDARY DR REGION: us-west-2 (Oregon)
+
+CORE COMPONENT CHECKLIST:
+[ ] Custom VPC (10.0.0.0/16) - 2 Availability Zones
+[ ] 2x Public Subnets (ALB Ingress)
+[ ] 2x Private Subnets (ECS Fargate Web Tier)
+[ ] 2x Isolated Subnets (RDS Cluster Data Tier)
+[ ] Amazon ECR Repository: aws-resilient-ecommerce-web
+[ ] AWS Application Load Balancer (ALB)
+[ ] Amazon RDS Multi-AZ / Aurora Global Database
+[ ] Amazon DynamoDB Global Table (Sessions Cluster)
+===================================================================

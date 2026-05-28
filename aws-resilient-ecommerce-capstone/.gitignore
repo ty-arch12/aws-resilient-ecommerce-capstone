@@ -1,0 +1,36 @@
+# AWS Credentials & Local Config
+.aws/
+*.pem
+*.pkcs12
+*.key
+*.secret
+
+# Build and Dependency Folders
+node_modules/
+jspm_packages/
+.pnp/
+.pnp.js
+dist/
+build/
+.next/
+out/
+
+# Python environment artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+
+# Infrastructure & Terraform states
+.terraform/
+*.tfstate
+*.tfstate.backup
+.env
+.env.local
+.env.production
+
+# System Files
+.DS_Store
+Thumbs.db
